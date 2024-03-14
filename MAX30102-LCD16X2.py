@@ -12,7 +12,7 @@ print(xx)
 
 import max30102
 import hrcalc
-import hrcalc1
+# import hrcalc1
 import I2C_LCD_driver
 from time import *
 
@@ -26,8 +26,8 @@ lcd.backlight(1)
 while True:
     red, ir = m.read_sequential()
     print(hrcalc.calc_hr_and_spo2(ir, red))
-    irString = str(hrcalc1.calc_hr_and_spo2_ir(ir,red))
-    redString = str(hrcalc1.calc_hr_and_spo2_red(ir,red))
+    irString = str(hrcalc.calc_hr_and_spo2_ir(ir,red))
+    redString = str(hrcalc.calc_hr_and_spo2_red(ir,red))
     lcd.lcd_display_string("heart rate = " + irString, 1, 0)
     lcd.lcd_display_string("spo2 = " + redString, 2, 0)
 	
